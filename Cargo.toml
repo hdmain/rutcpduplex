@@ -1,0 +1,47 @@
+[package]
+name = "rutcpduplex"
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.75"
+description = "Native Rust port of tcpduplex: encrypted full-duplex messaging over TCP (X25519 ECDH, AES-256-GCM)"
+license = "MIT"
+repository = "https://github.com/hdmain/rutcpduplex"
+homepage = "https://github.com/hdmain/rutcpduplex"
+documentation = "https://docs.rs/rutcpduplex"
+readme = "README.md"
+keywords = ["tcp", "duplex", "encryption", "x25519", "aes-gcm"]
+categories = ["network-programming", "cryptography"]
+authors = ["hdmain"]
+exclude = ["_go_ref/", "tests/go_compat/bin/"]
+
+[dependencies]
+aes-gcm = "0.10"
+crossbeam-channel = "0.5"
+hex = "0.4"
+rand = "0.8"
+sha2 = "0.10"
+thiserror = "2"
+x25519-dalek = { version = "2", features = ["static_secrets"] }
+
+[dev-dependencies]
+tempfile = "3"
+
+[[example]]
+name = "simple"
+path = "examples/simple.rs"
+
+[[example]]
+name = "client"
+path = "examples/client.rs"
+
+[[example]]
+name = "server"
+path = "examples/server.rs"
+
+[[example]]
+name = "transfer"
+path = "examples/transfer.rs"
+
+[profile.release]
+lto = true
+codegen-units = 1
