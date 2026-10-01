@@ -2,12 +2,18 @@
 
 Native **Rust** port of [`tcpduplex`](https://github.com/hdmain/tcpduplex): encrypted full-duplex messaging over TCP using X25519 ECDH, AES-256-GCM, length-prefixed records, and concurrent read/write loops.
 
-**Protocol-compatible** with the Go library:
-
-- Go `tcpduplex` ↔ Rust `rutcpduplex`
-- Rust `rutcpduplex` ↔ Go `tcpduplex`
-
 This is **not** TLS and does not replace certificate-based authentication on the public internet. It suits private networks, constrained environments, or protocols where you control both peers.
+
+## Other languages
+
+Wire-compatible ports of the same protocol:
+
+| Language | Repository |
+|----------|------------|
+| Go | [tcpduplex](https://github.com/hdmain/tcpduplex) |
+| Kotlin / Android | [tcpduplexkt](https://github.com/hdmain/tcpduplexkt) |
+| C++20 | [cpptcpduplex](https://github.com/hdmain/cpptcpduplex) |
+| Rust (this repo) | [rutcpduplex](https://github.com/hdmain/rutcpduplex) |
 
 ## Requirements
 
